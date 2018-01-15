@@ -1,0 +1,14 @@
+<h1>Show Recipe</h1>
+<div class="row recipe-div">
+	<div class="col-md-3">
+		<img class="img-fluid" src="<%= url("#{@recipe.image}") %>" onerror="this.onerror=null;this.src='<%= url("/images/spagetti.jpeg") %>';">
+	</div>
+	<div class="col-md-9">
+		<h3><a href="/recipes/<%= @recipe.id %>"><%= "#{@recipe.name}" %></a></h3>
+		<h4><%= @recipe.ingredients %></h4>
+		<h4><%= @recipe.method %></h4>
+		<h4><%= @recipe.cuisine %></h4>
+		<h4>Portions: <%= @recipe.portions %></h4>
+		<button><a href="/recipes/<%= @recipe.id %>/edit">Edit recipe</a></button><form action="/recipes/<%= @recipe.id %>" method="post"><input type="hidden" name="_method" value="delete"><input type="submit" value="Delete Recipe"></form>
+	</div>
+</h3>

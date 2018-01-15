@@ -1,0 +1,17 @@
+<h1>Edit Recipe: <%= "#{@recipe.name}" %></h1>
+<div class="form-div">
+	<form action="/recipes/<%= @recipe.id %>" method="post">
+		<label>Name:</label><br>
+		<input type="text" name="name" value="<%= @recipe.name %>"><br>
+		<label>Ingredients:</label><br>
+		<input type="text" name="ingredients" value="<%= @recipe.ingredients %>"><br>
+		<label>Method:</label><br>
+		<input type="text" name="method" value="<%= @recipe.method %>"><br>
+		<label>Cuisine:</label><br>
+		<input type="text" name="cuisine" value="<%= @recipe.cuisine %>"><br>
+		<label>Portions:</label><br>
+		<input type="text" name="portions" value="<%= @recipe.portions %>"><br>
+		<input type="hidden" name="_method" value="put"><br>
+		<input type="submit" value="Submit">
+	</form>
+</div>

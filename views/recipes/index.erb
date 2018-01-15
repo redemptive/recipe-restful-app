@@ -1,0 +1,13 @@
+<h2>All Recipes</h2>
+
+<% @recipes.each do |recipe| %>
+	<div class="row recipe-div">
+		<div class="col-md-3">
+			<img class="img-fluid" src="<%= url("#{recipe.image}") %>" onerror="this.onerror=null;this.src='<%= url("/images/spagetti.jpeg") %>';">
+		</div>
+		<div class="col-md-9">
+			<h3><a href="/recipes/<%= recipe.id %>"><%= "#{recipe.name}" %></a></h3>
+			<h4><%= recipe.cuisine %></h4>
+		</div>
+	</div>
+<% end %>
