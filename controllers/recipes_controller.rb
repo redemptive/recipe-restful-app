@@ -73,7 +73,7 @@ class RecipesController < Sinatra::Base
 
 		id = params[:id].to_i
 
-		recipe = Recipe.find("id", id)
+		recipe = Recipe.find("id", id)[0]
 
 		recipe.name = params[:name]
 		recipe.ingredients = params[:ingredients]
@@ -103,7 +103,7 @@ class RecipesController < Sinatra::Base
 
 		id = params[:id].to_i
 
-		@recipe = Recipe.find(id)
+		@recipe = Recipe.find("id", id)[0]
 
 		erb :"recipes/edit"
 
